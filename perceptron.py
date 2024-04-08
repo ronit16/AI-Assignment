@@ -36,7 +36,7 @@ if __name__ == "__main__":
     X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     y = np.array([0, 0, 0, 1])
 
-    p = Percepton(learning_rate=0.1, n_iters=100)
+    p = Percepton(learning_rate=0.1, n_iters=10)
     p.fit(X, y)
     print(p.predict(X))
 
