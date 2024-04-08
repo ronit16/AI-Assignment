@@ -36,7 +36,7 @@ if __name__ == "__main__":
     X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     y = np.array([0, 0, 0, 1])
 
-    p = Percepton(learning_rate=1, n_iters=10)
+    p = Percepton(learning_rate=0.01, n_iters=5)
     p.fit(X, y)
     print(p.predict(X))
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     # perform OR operation
     y = np.array([0, 1, 1, 1])
-    p = Percepton(learning_rate=1, n_iters=100)
+    p = Percepton(learning_rate=0.01, n_iters=3)
     p.fit(X, y)
     print(p.predict(X))
 
