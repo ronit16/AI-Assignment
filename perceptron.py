@@ -39,8 +39,6 @@ if __name__ == "__main__":
     p = Percepton(learning_rate=0.01, n_iters=5)
     p.fit(X, y)
     print(p.predict(X))
-
-    # show the hyperplane
     print(p.weights, p.bias)
 
     # perform OR operation
@@ -48,6 +46,4 @@ if __name__ == "__main__":
     p = Percepton(learning_rate=0.01, n_iters=3)
     p.fit(X, y)
     print(p.predict(X))
-
-    # show the hyperplane
     print(p.weights, p.bias)
