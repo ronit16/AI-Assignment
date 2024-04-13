@@ -4,7 +4,7 @@ class Percepton:
     def __init__(self, learning_rate=0.01, n_iters=10):
         self.lr = learning_rate
         self.n_iters = n_iters
-        self.activation_func = self._unit_step_func
+        self.activation_func = self.step_function
         self.weights = None
         self.bias = None
 
@@ -27,7 +27,10 @@ class Percepton:
         y_predicted = self.activation_func(linear_output)
         return y_predicted
 
-    def _unit_step_func(self, x):
+    def sigmoid_function(self, x):
+        return 1 / (1 + np.exp(-x))
+    
+    def step_function(self, x):
         return np.where(x >= 0, 1, 0)
 
 # Example usage

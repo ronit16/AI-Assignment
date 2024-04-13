@@ -54,22 +54,17 @@ class NeuralNetwork:
         return thresholded_output
 
 
-# Example usage:
-# Define input, hidden, and output layer sizes
 input_size = 2
 hidden_size = 3
 output_size = 1
 
-# Create the neural network
 nn = NeuralNetwork(input_size, hidden_size, output_size)
 
 # Dummy training data (XOR problem)
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 y = np.array([[0], [1], [1], [0]])
 
-# Train the neural network
 nn.train(X, y, epochs=1000)
 
-# Predict
 print("Predictions:")
 print(nn.predict(X))

@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 (X_train, y_train), (X_test, y_test) = datasets.mnist.load_data()
 X_train, X_test = X_train / 255.0, X_test / 255.0
 
-
 # Define the CNN model
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
@@ -27,20 +26,11 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-
 # Train the model
 model.fit(X_train, y_train, epochs=10)
 
 # Evaluate the model
 model.evaluate(X_test, y_test)
-
-
-# Save the model
-model.save('mnist_cnn.h5')
-
-
-# Load the saved model
-model = models.load_model('mnist_cnn.h5')
 
 # Make predictions
 y_pred = model.predict(X_test)
